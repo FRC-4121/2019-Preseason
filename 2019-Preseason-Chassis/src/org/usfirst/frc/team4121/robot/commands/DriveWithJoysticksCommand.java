@@ -21,6 +21,7 @@ public class DriveWithJoysticksCommand extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	
+    	//Generalized for all drive train types by passing all joystick values (will be used as needed in specific methods)
     	Robot.driveTrain.drive(Robot.oi.leftJoy.getX(), Robot.oi.leftJoy.getY(), Robot.oi.rightJoy.getX(), Robot.oi.rightJoy.getY());
     }
 

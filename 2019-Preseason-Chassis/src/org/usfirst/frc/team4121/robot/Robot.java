@@ -33,8 +33,8 @@ public class Robot extends TimedRobot {
 
 	public static int driveType;
 	
-	Command m_autonomousCommand;
-	SendableChooser<Command> m_chooser = new SendableChooser<>();
+	Command autonomousCommand;
+	SendableChooser<Command> chooser = new SendableChooser<>();
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -56,26 +56,31 @@ public class Robot extends TimedRobot {
 		
 		case 1: 
 			driveTrain = new WestCoastDriveTrain();
-		
+			break;
+			
 		case 2:
 			driveTrain = new MecanumDriveTrain();
+			break;
 			
 		case 3:
 			driveTrain = new OmniDriveTrain();
-		
+			break;
+			
 		case 4:
 			driveTrain = new SlideDriveTrain();
+			break;
 			
 		default:
 			driveTrain = new WestCoastDriveTrain();
 		
 		}
 		
-		
+		//Init output-input systems
 		oi = new OI();
-		//.addDefault("Default Auto", new ExampleCommand());
-		// chooser.addObject("My Auto", new MyAutoCommand());
-		SmartDashboard.putData("Auto mode", m_chooser);
+		
+		//chooser.addDefault("Default Auto", new ExampleCommand());
+		//chooser.addObject("My Auto", new MyAutoCommand());
+		SmartDashboard.putData("Auto mode", chooser);
 	}
 
 	/**
@@ -100,24 +105,17 @@ public class Robot extends TimedRobot {
 	 * LabVIEW Dashboard, remove all of the chooser code and uncomment the
 	 * getString code to get the auto name from the text box below the Gyro
 	 *
-	 * <p>You can add additional auto modes by adding additional commands to the
+	 * You can add additional auto modes by adding additional commands to the
 	 * chooser code above (like the commented example) or additional comparisons
 	 * to the switch structure below with additional strings & commands.
 	 */
 	@Override
 	public void autonomousInit() {
-		m_autonomousCommand = m_chooser.getSelected();
+		autonomousCommand = chooser.getSelected();
 
-		/*
-		 * String autoSelected = SmartDashboard.getString("Auto Selector",
-		 * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
-		 * = new MyAutoCommand(); break; case "Default Auto": default:
-		 * autonomousCommand = new ExampleCommand(); break; }
-		 */
-
-		// schedule the autonomous command (example)
-		if (m_autonomousCommand != null) {
-			m_autonomousCommand.start();
+		//start the auto command
+		if (autonomousCommand != null) {
+			autonomousCommand.start();
 		}
 	}
 
@@ -131,12 +129,9 @@ public class Robot extends TimedRobot {
 
 	@Override
 	public void teleopInit() {
-		// This makes sure that the autonomous stops running when
-		// teleop starts running. If you want the autonomous to
-		// continue until interrupted by another command, remove
-		// this line or comment it out.
-		if (m_autonomousCommand != null) {
-			m_autonomousCommand.cancel();
+		
+		if (autonomousCommand != null) {
+			autonomousCommand.cancel();
 		}
 	}
 

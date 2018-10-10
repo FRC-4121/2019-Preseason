@@ -15,11 +15,25 @@ package org.usfirst.frc.team4121.robot;
  */
 public class RobotMap {
 
+	//Motor Controller Constants
 	public static final int MOTOR_1 = 1;
 	public static final int MOTOR_2 = 2;
 	public static final int MOTOR_3 = 3;
 	public static final int MOTOR_4 = 4;
-	
-	public static final int DIRECTION_MULTIPLIER = 1;
+
+	//Invert direction (for WCD only)
+	public static int DIRECTION_MULTIPLIER = 1;
+
+	//Standard motor drive speeds for auto
+	public static final double AUTO_DRIVE_SPEED = 0.5;
+
+	//PID values
+	public static double kP_Straight = 0.03;
+	public static double kP_Cube = .2;
+	public static double kP_Turn = 0.06;
+	public static double kI_Straight = 0.0;
+	public static double kI_Turn = 0.0;
+	public static double kD_Straight = 0.0;
+	public static double kD_Turn = 0.0;
 
 }

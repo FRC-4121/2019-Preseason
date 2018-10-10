@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team4121.robot;
 
+import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.Joystick;
 
 /**
@@ -15,6 +16,10 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
 	
+	//Create gyro object
+	public ADXRS450_Gyro mainGyro = new ADXRS450_Gyro();	
+	
+	//Create joystick objects
 	public Joystick leftJoy = new Joystick(0);
 	public Joystick rightJoy = new Joystick(1);
 }
