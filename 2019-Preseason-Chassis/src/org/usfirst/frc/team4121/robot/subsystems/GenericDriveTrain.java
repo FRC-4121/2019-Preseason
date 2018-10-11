@@ -19,7 +19,7 @@ public class GenericDriveTrain extends Subsystem {
     WPI_TalonSRX frontRightMotor = new WPI_TalonSRX(RobotMap.MOTOR_2);
     WPI_TalonSRX backLeftMotor = new WPI_TalonSRX(RobotMap.MOTOR_3);
     WPI_TalonSRX backRightMotor = new WPI_TalonSRX(RobotMap.MOTOR_4);
-
+    WPI_TalonSRX strafeMotor = new WPI_TalonSRX(RobotMap.MOTOR_5);
     
     //Methods of Generic class are common to all drive train types. 
     //Specific method code is unique to each drive train type.
@@ -29,14 +29,9 @@ public class GenericDriveTrain extends Subsystem {
         setDefaultCommand(new DriveWithJoysticksCommand());
     }
     
-    public void drive(double leftJoyX, double leftJoyY, double rightJoyX, double rightJoyY) {
-    	
-    	
-    }
+    public void drive(double leftJoyX, double leftJoyY, double rightJoyX, double rightJoyY) {}
     
-    public void autoDrive(double speed, double angle, double extraVariable) {
-    	
-    }
+    public void autoDrive(double speed, double angle) {}
 
 }
 

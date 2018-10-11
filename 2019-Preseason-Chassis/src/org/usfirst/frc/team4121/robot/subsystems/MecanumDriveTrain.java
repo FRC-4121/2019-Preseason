@@ -13,14 +13,14 @@ public class MecanumDriveTrain extends GenericDriveTrain {
     @Override
     public void drive(double leftJoyX, double leftJoyY, double rightJoyX, double rightJoyY) {
     	
-    	mecanumDrive.driveCartesian(leftJoyX,  leftJoyY,  rightJoyX);
+    	mecanumDrive.driveCartesian(leftJoyY,  leftJoyX,  rightJoyX);
     
     }
     
     @Override
-    public void autoDrive(double speed, double angle, double rotation) {
+    public void autoDrive(double speed, double angle) {
     	
-    	mecanumDrive.drivePolar(speed, angle, rotation);
+    	mecanumDrive.drivePolar(speed, angle, 0); //rotation set to zero due to lack of understnad of how it works (!)
     	
     }
     

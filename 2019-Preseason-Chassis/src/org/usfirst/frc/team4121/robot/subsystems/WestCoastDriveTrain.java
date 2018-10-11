@@ -27,12 +27,12 @@ public class WestCoastDriveTrain extends GenericDriveTrain {
 	}
 	
 	@Override
-	public void autoDrive(double speed, double angle, double direction) {
+	public void autoDrive(double speed, double angle) {
 		
 		double angleError = Robot.oi.mainGyro.getAngle() - angle;
     	double angleCorrection = RobotMap.kP_Straight * angleError;
     	
-    	westCoastDrive.tankDrive(RobotMap.AUTO_DRIVE_SPEED + angleCorrection, RobotMap.AUTO_DRIVE_SPEED - angleCorrection);    	    	
+    	westCoastDrive.tankDrive((RobotMap.AUTO_DRIVE_SPEED + angleCorrection), (RobotMap.AUTO_DRIVE_SPEED - angleCorrection));    	    	
 		
 	}
 	
