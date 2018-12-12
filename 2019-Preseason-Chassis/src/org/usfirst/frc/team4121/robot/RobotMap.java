@@ -31,6 +31,9 @@ public class RobotMap {
 	//Standard motor drive speeds for auto
 	public static final double AUTO_DRIVE_SPEED = 0.5;
 
+	//Encoder distances
+	public static final double MECANUM_ENCODER_DPP = 0.075;
+	
 	//PID values
 	public static double kP_Straight = 0.03;
 	public static double kP_Turn = 0.06;

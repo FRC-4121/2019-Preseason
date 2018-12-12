@@ -8,10 +8,11 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 /**
  * Specific code for WCD (six-wheel tank-style drive)
  */
+
 public class WestCoastDriveTrain extends GenericDriveTrain {
 
 	//Initialize robot drive train - 6-wheel WCD style
-	DifferentialDrive westCoastDrive = new DifferentialDrive(frontLeftMotor, frontRightMotor);
+	DifferentialDrive westCoastDrive = new DifferentialDrive(leftMotorGroup, rightMotorGroup);
 
 	@Override
 	public void drive(double leftJoyX, double leftJoyY, double rightJoyX, double rightJoyY) {

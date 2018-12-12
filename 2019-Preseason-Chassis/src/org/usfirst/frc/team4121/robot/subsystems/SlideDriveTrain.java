@@ -5,7 +5,7 @@ import org.usfirst.frc.team4121.robot.RobotMap;
 /**
  * Currently theoretical and completely self-developed.  No idea whether this will work until I test it on a real robot.	
  * 
- * I think that, due to the
+ * Wheels are omni-style wheels, with 90-degree sliders
  * 
  * General layout of a slide drive chassis:
  * (M: motor, W: wheel)

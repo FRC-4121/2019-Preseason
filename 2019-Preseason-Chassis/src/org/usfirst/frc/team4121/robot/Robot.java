@@ -43,13 +43,14 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 	
-		/*Allows for simple alteration of drive train type.  
-		1: West Coast
-		2: Mecanum 
-		3: Omni
-		4: Slide
-		default: West Coast
-		*/
+		/* Allows for simple alteration of drive train type.  
+		 * 1: West Coast
+		 * 2: Mecanum 
+		 * 3: Omni
+		 * 4: Slide
+		 * default: West Coast
+		 */
+		
 		driveType = 1;
 		
 		switch(driveType) {
@@ -140,7 +141,11 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void teleopPeriodic() {
+		
 		Scheduler.getInstance().run();
+	
+		SmartDashboard.putData("Front Left Encoder Distance: ", data);
+	
 	}
 
 	/**
